@@ -17,7 +17,7 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+ 
 from scipy.sparse import coo_matrix
 import math as mt
 from scipy.sparse.linalg import * #used for matrix multiplication
@@ -37,7 +37,7 @@ songs = songs.sample(n=5000).drop('link', axis=1).reset_index(drop=True)
 songs['text'] = songs['text'].str.replace(r'\n', '')
 
 tfidf = TfidfVectorizer(analyzer='word', stop_words='english')
-lyrics_matrix = tfidf.fit_transform(songs['text'])
+lyrics_matrix = tfidf.fit_transform(songs['text'].values.astype('U'))
 cosine_similarities = cosine_similarity(lyrics_matrix) 
 similarities = {}
 for i in range(len(cosine_similarities)):
