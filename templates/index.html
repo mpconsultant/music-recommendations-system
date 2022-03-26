@@ -1,39 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-margin: 0;
-font-family: Arial, Helvetica, sans-serif;
-}
- 
-.bg-image {
-background-image: url("music.jpg");
-background-color: #161615;
-height: 550px;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-}
-.bg-text {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: white;
-}
- 
-</style>
+
+      
+
+       <!-- css -->
+       <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
+
+
 </head>
 <body>
-<div class="bg-image">
-<div class="bg-text">
-  <h1><mark>Music Recommendations System</mark></h1>
+  <div id="image" style="background:url(/static/images/music.jpg) center / cover no-repeat fixed;"></div> 
 
-	
-  
-   
+  <h2><mark>MIT-ADSP-2022 Capstone Project:-: Music Recommendations System</mark></h2>
+
   <form name="passdata" action="/about" method="post">
         <div>
     <label for="quantity"> Song Id[1-4990] :</label>
@@ -57,6 +37,9 @@ table, th, td {
 <h2>Music Recommendations Results</h2>
 
 <table style="width:100%">
+  <colgroup>
+    <col span="1" style="background-color: rgba(218, 17, 17, 0.473)">
+  </colgroup>
   <tr>
   <th>Songs List</th>
  
